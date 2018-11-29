@@ -32,7 +32,11 @@ $(function(){
 	}
 
 	function start(){
-		playNext();
+		showButtons([{
+			title: "Start",
+			click: playNext
+		}]);
+		// playNext();
 	}
 	
 
@@ -62,18 +66,22 @@ $(function(){
 	$win.on('yt-player:finished', function(e){
 		
 		console.log("FINISHED");
-		showButtons();
+		showButtons( current_video_object.buttons );
 		
 	});
 
-	function showButtons(){
-		current_video_object.buttons.forEach(function(e,i){
+	function showButtons( _buttons ){
+		_buttons.forEach(function(e,i){
 			console.log('btn', e, i );
 			$(`<div class="select-button" data-video-id="${e.video_id}">${e.title}<div>`)
 				.appendTo($buttons)
 				.click(function(){
-					var $e = $(this);
-					playNext( $e.data('video-id') );
+					if( e.click ) {
+						e.click();
+					}else{
+						var $e = $(this);
+						playNext( $e.data('video-id') );
+					}
 					hideButtons();
 				})
 			;

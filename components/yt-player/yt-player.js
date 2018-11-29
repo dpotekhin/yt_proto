@@ -11,16 +11,19 @@ $(function(){
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
   //
+  var $yt_container = $( '.yt-player__container', $element );
   var $win = $(window);
   var player;
   var current_video_id;
   var is_playing = false;
+  var current_end;
 
-  setVisibility( false );
+  setVisibility( false, 0 );
   // var done = false;
 
+
   window.onYouTubeIframeAPIReady = function() {
-    player = new YT.Player( $( '.yt-player__container', $element )[0], {
+    player = new YT.Player( $yt_container[0], {
       height: '100%',
       width: '100%',
       // videoId: '',
@@ -32,6 +35,7 @@ $(function(){
       	playsinline: 1,
       	rel: 0,
       	showinfo: 0,
+      	enablejsapi: 1,
       	// start: ,
       	// end: ,
       },
@@ -40,7 +44,18 @@ $(function(){
         'onStateChange': onPlayerStateChange
       }
     });
+    $yt_container = $( '.yt-player__container', $element );
   	console.log('YT player is ready!', player);
+
+  	setInterval(function(){
+	  	if( !is_playing || !current_end ) return;
+	  	// console.log('>', player.getCurrentTime() );
+	  	if( current_end && player.getCurrentTime() >= current_end ){
+	  		stopPlayback();
+	  		player.stopVideo();
+	  	}
+	  }, 40 );
+
   }
 
   // 4. The API will call this function when the video player is ready.
@@ -70,9 +85,7 @@ $(function(){
 
   		case YT.PlayerState.ENDED:
   			if( is_playing ){
-  				is_playing = false;
-	  			setVisibility(false);
-	  			$win.trigger('yt-player:finished');
+  				stopPlayback();
 	  		}
   			break;
   	}
@@ -87,15 +100,23 @@ $(function(){
   }
 
   //
+
+  function stopPlayback(){
+  	is_playing = false;
+		setVisibility(false);
+		$win.trigger('yt-player:finished');
+  }
+
   function setVisibility( _on, _time ){
   	console.log("setVisibility", _on );
   	// $('iframe', $element ).css('visibility', _on ? 'visible' : 'hidden' );
-  	if( _on ) $('iframe', $element ).fadeIn( _time || 100 );
-  	else $('iframe', $element ).fadeOut( _time || 100 );
+  	if( _on ) $yt_container.show();
+  	else $yt_container.hide();
   }
 
   $win.on('yt-player:play-by-id', function(e,o){
   	current_video_id = o.videoId;
+  	current_end = o.endSeconds;
   	player.loadVideoById(o);
   });
 
