@@ -1,0 +1,24 @@
+include components/pugs
+//- include components/footer/footer
+
+head
+  link( href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&amp;subset=cyrillic" rel="stylesheet")
+  link( href="styles/styles.css" rel="stylesheet")
+  
+  script(src="js/libs/handlebars.min.js")
+  script(src="js/libs/jquery-3.3.1.min.js")
+  script(src="js/libs/TweenMax.min.js")
+
+  script(src="js/main.js")
+
+body(data-data="assets/data.json")
+  
+  +list-player
+  
+  //- +footer
+  
+  //- .debug  
+  
+  //- #templates
+  //-   +title-template()
+  

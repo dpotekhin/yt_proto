@@ -1,0 +1,16 @@
+.yt-player{
+	
+	pointer-events: none;
+	background-color: black;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+
+	&__container{
+		$v-offset: 60px;
+		box-sizing: border-box;
+		height: calc(100% + #{$v-offset * 2} );
+		margin-top: - $v-offset;
+	}
+
+}

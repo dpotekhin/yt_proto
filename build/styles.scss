@@ -1,0 +1,15 @@
+@import "_normalize";
+@import "_constants";
+@import "_fonts";
+
+body{
+  font-family: 'MP', sans-serif;
+  background: $COLOR-BG;
+  overflow-x: hidden;
+}
+
+@import "../components/select-button/select-button.scss";
+
+@import "../components/yt-player/yt-player.scss";
+@import "../components/list-player/list-player.scss";
+

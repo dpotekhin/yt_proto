@@ -1,0 +1,32 @@
+.list-player{
+	position: relative;
+	padding: 50px;
+	box-sizing: border-box;
+	background-color: gray;
+	overflow: hidden;
+
+	&__yt-player{
+		height: 80%;
+	}
+	
+	perspective: 200px;
+
+	&__buttons{
+		position: absolute;
+		text-align: center;
+		width: 100%;
+		left: 0;
+		bottom: 20%;
+		
+		transform-origin: 0 0 -600px;
+		transform: rotateX(0deg);
+		transition: transform .4s;
+
+		&_hidden{
+			transform: rotateX(-28deg);
+		}
+
+	}
+
+
+}

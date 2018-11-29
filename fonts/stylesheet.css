@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('hinted-subset-MyriadPro-Cond.woff2') format('woff2'),
+        url('hinted-subset-MyriadPro-Cond.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
