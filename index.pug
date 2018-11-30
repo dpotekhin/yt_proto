@@ -2,20 +2,24 @@ include components/pugs
 //- include components/footer/footer
 
 head
+  meta( name="viewport" content="width=device-width, initial-scale=1, user-scalable=no")
   link( href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&amp;subset=cyrillic" rel="stylesheet")
   link( href="styles/styles.css" rel="stylesheet")
   
-  script(src="http://192.168.50.218:8091/target/target-script-min.js")
+  //- script(src="http://192.168.50.218:8091/target/target-script-min.js")
 
-  script(src="js/libs/handlebars.min.js")
-  script(src="js/libs/jquery-3.3.1.min.js")
-  script(src="js/libs/TweenMax.min.js")
+  script(src="js/libs/jquery-3.3.1.min.js" defer)
+  script(src="js/libs/iphone-inline-video.min.js" defer)
+  //- script(src="js/libs/handlebars.min.js")
+  //- script(src="js/libs/TweenMax.min.js")
 
-  script(src="js/main.js")
+  script(src="js/main.js" defer)
 
 body(data-data="assets/data.json")
   
   +list-player
+
+  
   
   //- +footer
   

@@ -6,10 +6,13 @@ body{
   font-family: 'MP', sans-serif;
   background: $COLOR-BG;
   overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
 }
 
 @import "../components/select-button/select-button.scss";
 
 @import "../components/yt-player/yt-player.scss";
+@import "../components/video-player/video-player.scss";
 @import "../components/list-player/list-player.scss";
 

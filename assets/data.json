@@ -5,6 +5,7 @@
       "id": 1,
       "title": "video 1",
       "yt_video_id": "BC2dRkm8ATU",
+      "url": "http://sb.peppers-studio.ru/dp/yt-proto/video/planalytics_script_1.mp4",
       "start": 60,
       "end": 65,
       "buttons": [
@@ -23,6 +24,7 @@
       "id": 2,
       "title": "video 2",
       "yt_video_id": "7wzR_BVFsUU",
+      "url": "http://sb.peppers-studio.ru/dp/yt-proto/video/planalytics_script_2.mp4",
       "start": 60,
       "end": 80,
       "buttons": [
@@ -41,6 +43,7 @@
       "id": 3,
       "title": "video 3",
       "yt_video_id": "so9DBHCo64Q",
+      "url": "http://sb.peppers-studio.ru/dp/yt-proto/video/planalytics_script_3.mp4",
       "start": 80,
       "end": 90,
       "buttons": [

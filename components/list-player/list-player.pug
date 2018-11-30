@@ -1,10 +1,13 @@
 include ../yt-player/yt-player
+include ../video-player/video-player
+
 mixin list-player
   .list-player
 
     .list-player__yt-player
-      +yt-player
+      +video-player
+      //- +yt-player
 
     .list-player__buttons
-      
+
   block

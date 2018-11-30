@@ -1,6 +1,6 @@
 .list-player{
 	position: relative;
-	padding: 50px;
+	padding: 30px;
 	box-sizing: border-box;
 	background-color: gray;
 	overflow: hidden;
@@ -9,7 +9,7 @@
 		height: 80%;
 	}
 	
-	perspective: 200px;
+	// perspective: 600px;
 
 	&__buttons{
 		position: absolute;
@@ -18,12 +18,13 @@
 		left: 0;
 		bottom: 20%;
 		
-		transform-origin: 0 0 -600px;
-		transform: rotateX(0deg);
-		transition: transform .4s;
-
+		// transform-origin: 0 0 -200px;
+		// transform: rotateX(0deg);
+		// transition: transform .4s;
+		transition: bottom .4s;
 		&_hidden{
-			transform: rotateX(-28deg);
+			// transform: rotateX(-28deg);
+			bottom: -30%;
 		}
 
 	}
